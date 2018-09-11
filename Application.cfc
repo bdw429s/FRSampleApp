@@ -18,6 +18,8 @@ component{
 	COLDBOX_CONFIG_FILE 	 = "";
 	// COLDBOX APPLICATION KEY OVERRIDE
 	COLDBOX_APP_KEY 		 = "";
+	
+	this.mappings[ "/coldbox" ] 	= COLDBOX_APP_ROOT_PATH & "coldbox";
 
 	// application start
 	public boolean function onApplicationStart(){
