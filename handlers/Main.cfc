@@ -30,7 +30,8 @@
 			'/index.cfm?event=package.myHandler.index' : 'package.myHandler.index',
 			'/api/v1/cruises/serializer/234234' : 'CruiseSearchAPIv1:Serializer.get',
 			'/api/v1/cruises/search/234232' : 'CruiseSearchAPIv1:search.get',
-			'/api/v1/cruises/search' : 'CruiseSearchAPIv1:search.index'
+			'/api/v1/cruises/search' : 'CruiseSearchAPIv1:search.index',
+			'/index.cfm/myHandler/wrapit' : 'myHandler.wrapped'
 		};
 		prc.aURLs = prc.urls.keyArray().sort( 'text' );
 		

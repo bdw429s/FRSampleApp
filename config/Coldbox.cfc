@@ -15,7 +15,7 @@
 
 			//Implicit Events
 			defaultEvent			= "",
-			requestStartHandler		= "Main.onRequestStart",
+			requestStartHandler		= "",
 			requestEndHandler		= "",
 			applicationStartHandler = "Main.onAppInit",
 			applicationEndHandler	= "",
