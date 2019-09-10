@@ -67,6 +67,10 @@
 	function cachedEvent(event,rc,prc) cache=true {
 		event.setView( 'main/cachedEvent' );
 	}
+	
+	function throwAnException(event,rc,prc) {
+		throw( message='Bad things have happened', detail='Here''s what we know...' );
+	}
 
 	function onException(event,rc,prc){
 		event.setHTTPHeader( statusCode = 500 );

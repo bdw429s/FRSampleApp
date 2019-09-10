@@ -35,6 +35,11 @@ component{
 
 	// request start
 	public boolean function onRequestStart( string targetPage ){
+		
+		if( url.keyExists( 'bypassColdBoxErrorHandling' ) || url.keyExists( 'bypassALLErrorHandling' ) ) {
+			throw( message='Bad boys, bad boys, watcha'' gonna'' do?', detail='watcha'' gonna'' do when they come for you?' );
+		}
+		
 		// Process ColdBox Request
 		application.cbBootstrap.onRequestStart( arguments.targetPage );
 
@@ -51,6 +56,15 @@ component{
 
 	public boolean function onMissingTemplate( template ){
 		return application.cbBootstrap.onMissingTemplate( argumentCollection=arguments );
+	}
+
+	function onError( e ) {
+		if( url.keyExists( 'bypassALLErrorHandling' ) ) {
+			throw( e );
+		} else {
+			writeOutput( 'There was an error on this page, but we trapped it in Application.cfc.' );
+		}
+		
 	}
 
 }
