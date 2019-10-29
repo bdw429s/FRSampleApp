@@ -62,6 +62,10 @@ component{
 		if( url.keyExists( 'bypassALLErrorHandling' ) ) {
 			throw( e );
 		} else {
+			FrapiClass = createObject("java","com.intergral.fusionreactor.api.FRAPI");
+			frapi = FrapiClass.getInstance();
+			transaction = frapi.getActiveMasterTransaction();
+			transaction.setTrappedThrowable(e.getPageException());
 			writeOutput( 'There was an error on this page, but we trapped it in Application.cfc.' );
 		}
 		

@@ -34,7 +34,7 @@
 			'/index.cfm/myHandler/wrapit' : 'myHandler.wrapped'
 		};
 		prc.aURLs = prc.urls.keyArray().sort( 'text' );
-		
+
 		event.setView("main/index");
 	}
 
@@ -55,19 +55,19 @@
 	}
 
 	function fakeout(event,rc,prc){
-		// I never get run 
+		// I never get run
 		// See the preProcess interceptor in config/ColdBox.cfc
 	}
-	
+
 	function sneaky(event,rc,prc){
 		prc.welcomeMessage = "Welcome to ColdBox!";
 		event.setView("main/index");
 	}
-	
+
 	function cachedEvent(event,rc,prc) cache=true {
 		event.setView( 'main/cachedEvent' );
 	}
-	
+
 	function throwAnException(event,rc,prc) {
 		throw( message='Bad things have happened', detail='Here''s what we know...' );
 	}
@@ -83,6 +83,10 @@
 	}
 
 	function onAppInit(event,rc,prc){
+	}
+
+	function codeCoverage(event, rc, prc){
+		event.setView("main/codeCoverage");
 	}
 
 }
